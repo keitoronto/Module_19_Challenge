@@ -87,10 +87,11 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 
 # Database of KryptoJobs2Go candidates including their name, digital address, rating and hourly cost per Ether.
 # A single Ether is currently valued at $1,500
+# 0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0
 candidate_database = {
     "Lane": [
         "Lane",
-        "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0",
+        "0x1197826389b87b030D002b22248326F2eCb061Cf",
         "4.3",
         0.20,
         "Images/lane.jpeg",
@@ -296,7 +297,8 @@ if st.sidebar.button("Send Transaction"):
     # Call the `send_transaction` function and pass it 3 parameters:
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
-    transaction_hash = send_transaction(account, candidate_address, wage)
+    #transaction_hash = send_transaction(account, candidate_address, wage)
+    transaction_hash = send_transaction(w3, account, candidate_address, wage)
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
